@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #0c0c0c;
+    --text-primary: #f5f4f0;
+    --accent-color: #e8e2d3;
+    --border-color: #333333;
+    --input-bg: rgba(30, 30, 30, 0.7);
+    --beige-bg: #f5e9db;
+    --dark-panel-bg: #191919;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+}
+
+.serif-text {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-left: 50px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #111;
+    padding: 18px 45px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Who We Are Section */
+.who-we-are {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 150px;
+    background-color: var(--bg-color);
+}
+
+.who-we-are .text-content {
+    flex: 1;
+    padding-right: 80px;
+}
+
+.who-we-are h2 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.who-we-are p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #bbb;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.who-we-are .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.who-we-are .image-content img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* What We Offer Section */
+.what-we-offer {
+    padding: 100px 150px;
+    background-color: #111;
+}
+
+.what-we-offer h2 {
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+.offer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.offer-card {
+    flex: 1;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.offer-card span {
+    position: relative;
+    z-index: 10;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Contact Footer */
+.contact-footer {
+    position: relative;
+    padding: 120px 50px;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=1600&q=80') no-repeat center center/cover;
+}
+
+.contact-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 10, 0.85);
+}
+
+.footer-content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-footer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.contact-block {
+    margin-bottom: 30px;
+}
+
+.contact-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.contact-block p {
+    font-size: 13px;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+/* Auth Forms */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    background: url('https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+    position: relative;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(12, 12, 12, 0.85);
+}
+
+.auth-card {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 10;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #aaa;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.auth-card .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.auth-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.alert-error {
+    background: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    color: #ff6b6b;
+}
+
+.alert-success {
+    background: rgba(40, 167, 69, 0.1);
+    border: 1px solid #28a745;
+    color: #51cf66;
+}
+
+/* ==========================================
+   Bookstore Redesign Sections (Shreyash's E-Books)
+   ========================================== */
+
+/* 1. Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: url('website_image/1.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 100px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 5rem;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    margin: 0 0 35px 0;
+    text-transform: uppercase;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 16px 36px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    background-color: #e2dcd5;
+    transform: scale(1.03);
+}
+
+.hero-subtext {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin-top: 25px;
+    opacity: 0.95;
+    text-transform: uppercase;
+}
+
+/* 2. November Sale Section */
+.sale-section {
+    background-color: var(--beige-bg);
+    padding: 100px 80px;
+    text-align: center;
+    color: #191919;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555555;
+    margin: 0 0 60px 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-container {
+    width: 100%;
+    aspect-ratio: 368 / 273;
+    overflow: hidden;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 40px 30px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.card-body h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin: 0 0 15px 0;
+    color: #191919;
+    text-transform: uppercase;
+}
+
+.card-description {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 3. Upcoming Events Section */
+.events-section {
+    background-color: var(--beige-bg);
+    padding: 0 80px 120px 80px;
+    color: #191919;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.events-info {
+    text-align: left;
+}
+
+.events-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+}
+
+.event-item {
+    margin-bottom: 35px;
+}
+
+.event-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin: 0 0 8px 0;
+    color: #191919;
+    text-transform: uppercase;
+}
+
+.event-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.events-image {
+    width: 100%;
+}
+
+.events-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4. Physical Store Section */
+.store-section {
+    background-color: var(--dark-panel-bg);
+    color: #ffffff;
+}
+
+.store-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.store-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.store-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+.store-content {
+    max-width: 420px;
+    width: 100%;
+    text-align: left;
+}
+
+.store-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.store-address {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    color: #cccccc;
+    margin: 0 0 40px 0;
+}
+
+.store-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 16px 36px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.store-btn:hover {
+    background-color: #e2dcd5;
+    transform: scale(1.03);
+}
+
+/* 5. Need Anything Section */
+.contact-section {
+    background-color: var(--dark-panel-bg);
+    color: #ffffff;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+.contact-content {
+    max-width: 420px;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    margin: 0 0 50px 0;
+    text-transform: uppercase;
+}
+
+.contact-item {
+    margin-bottom: 35px;
+}
+
+.contact-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #aaaaaa;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+}
+
+.contact-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Local Navbar Overrides */
+.navbar .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Custom Local Footer */
+footer {
+    background-color: #191919;
+    color: #888888;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    border-top: 1px solid #222222;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .store-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .events-image,
+    .store-image,
+    .contact-image {
+        order: 2;
+    }
+
+    .events-info,
+    .store-info,
+    .contact-info {
+        order: 1;
+        padding: 60px 40px;
+    }
+
+    .events-section {
+        padding: 0 40px 60px 40px;
+    }
+
+    .sale-section {
+        padding: 60px 40px;
+    }
+}
